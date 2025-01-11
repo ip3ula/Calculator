@@ -1,0 +1,367 @@
+:root {
+  /* Colors */
+  --primary: #1a1c28;
+  --secondary: #222433;
+  --font: #ffffffd0;
+  --button-bg: #30344d20;
+  --button-active-bg: #ffd700;
+  --button-active-color: var(--primary);
+  --text-light: #9fa3b3;
+  --display-color: #ffffff;
+
+  /* Font Sizes */
+  --font-size-large: clamp(1rem, 2vw, 2rem);
+  --font-size-small: 80%;
+  --font-size-medium: 100%;
+  --font-size-extra-large: 2em;
+  --font-size-header: 190%;
+
+  /* Dimensions */
+  --button-size: 6vw;
+  --button-mobile-size: clamp(4rem, 8vw, 8rem);
+  --margin-default: 0.5em;
+  --margin-mobile: 0.4em;
+}
+
+/* Universal styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+}
+
+/* Buttons */
+button {
+  border: 0;
+  border-radius: 2px;
+  padding: 1em;
+  font-size: var(--font-size-large);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--button-size);
+  height: var(--button-size);
+  color: var(--font);
+  background-color: var(--button-bg);
+  margin: 0.2em;
+}
+
+.active {
+  background-color: var(--button-active-bg);
+  color: var(--button-active-color);
+}
+
+.btnBasic,
+.active {
+  margin: var(--margin-default);
+}
+.wide {
+  width: 95% !important;
+}
+.themesButton {
+  
+    width: 60vw;
+    height: 8vw;
+}
+
+/* Typography */
+.welcome {
+  display: flex;
+  font-size: 10vw;
+  align-items: center;
+  height: 100vh;
+  color: var(--display-color);
+  font-weight: 700;
+  justify-content: center;
+  margin-top: 10vw !important;
+}
+
+/* Layout */
+.right {
+  background-color: var(--secondary);
+  height: 100vh;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto
+}
+
+.portraitOnly {
+  display: flex;
+  height: 50px;
+  background-color: var(--primary);
+  color: var(--font);
+  font-size: var(--font-size-large);
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 20px
+}
+
+.container {
+  height: 100vh;
+  align-items: stretch;
+}
+
+.left {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 30px 0;
+  overflow-y: auto;
+}
+
+.leftTable {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.display {
+  text-align: left;
+  width: 80%;
+  margin: 1em auto;
+  color: var(--display-color);
+  font-size: var(--font-size-extra-large);
+  font-weight: 700;
+}
+
+#mainHeader {
+  color: var(--font);
+  font-size: var(--font-size-header);
+  text-align: center;
+  margin: 1em 0;
+}
+
+#mainParagraph,
+#by {
+  color: var(--text-light);
+  text-align: center;
+}
+
+#mainParagraph {
+  font-size: var(--font-size-medium);
+  margin-top: 1.5em;
+}
+
+#by {
+  font-size: 120%;
+}
+
+/* Mobile Styles */
+@media (max-width: 575px) {
+  .left {
+  display: none;
+    background-color: var(--primary);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99t;
+  }
+  .calButton {
+      width: 20vw;
+      height: 20vw;
+      
+  }
+  .leftTable {
+    margin-top: -5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .btnBasic,
+  .active {
+    width: 20vw !important;
+    height: 20vw !important;
+  }
+  #mainHeader {
+    display: none;
+  }
+
+  #mainParagraph {
+    font-size: var(--font-size-medium);
+    margin-top: 6.5em;
+    margin-bottom: -3.5em;
+  }
+.themes {
+    margin-top: -10em;
+}
+  #by {
+    font-size: 120%;
+    margin-top: -4em;
+  }
+
+  .display {
+    font-size: var(--font-size-extra-large);
+    font-weight: 700;
+    text-align: left;
+  }
+  .right {
+    margin-top: 50px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 576px) and (max-width: 767px) {
+  .left {
+    display: none;
+    background-color: var(--primary);
+    min-height: 50vh;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .leftTable {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .btnBasic,
+  .active {
+    width: 18vw;
+    height: 18vw;
+  }
+
+  #mainHeader {
+    display: none;
+  }
+
+  #mainParagraph {
+    font-size: var(--font-size-medium);
+  }
+
+  #by {
+    font-size: 120%;
+  }
+
+  .display {
+    font-size: var(--font-size-extra-large);
+    font-weight: 700;
+    text-align: left;
+  }
+}
+/* Medium Screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .portraitOnly {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .left {
+    flex: 1;
+    background-color: var(--primary);
+    height: 100vh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+    
+  }
+  .leftTable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  } 
+   .right {
+        flex: 4;   
+        background-color: var(--secondary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2em  ;
+          }
+
+  button {
+    width: 7vw;
+    height: 7vw;
+  }
+  #mainHeader {
+      font-size: 2vw;
+  }
+
+  #mainParagraph {
+    font-size: var(--font-size-medium);
+  }
+ 
+
+  #by {
+    font-size: 120%;
+    margin-top: 20vw;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .portraitOnly {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+    align-items: stretch;
+  }
+
+  .left {
+    flex: 1;
+    background-color: var(--primary);
+    height: 100vh;
+  }
+
+  .right {
+    flex: 4;
+  }
+
+  #mainHeader {
+    margin: 20px 0;
+  }
+
+  #mainParagraph {
+    font-size: var(--font-size-medium);
+  }
+
+  .display {
+    font-size: var(--font-size-extra-large);
+    font-weight: 700;
+    margin: 1em;
+  }
+
+  .leftTable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #by {
+    font-size: 120%;
+    margin-top: 50px;
+  }
+}
